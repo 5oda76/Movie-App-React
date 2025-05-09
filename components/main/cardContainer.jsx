@@ -1,12 +1,19 @@
 import React, { useState } from "react";
+import Card from "./Card";
 
 function cardContainer() {
 
     /* This will render: 5 Card components */
 
-    return (<div>
-        <h2>cardContainer</h2>
-        </div>)
+    /* We should use map to get the films of an array */
+
+
+    /*  */
+    return (
+        <div>
+            <Card />
+        </div>
+    );
 }
 
 export default cardContainer;
