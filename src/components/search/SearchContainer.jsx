@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function searchContainer() {
+function SearchContainer() {
 
     /* This will render: Search, searchButton */
 
@@ -8,4 +8,4 @@ function searchContainer() {
         
         </div>)
 }
-export default searchContainer;
+export default SearchContainer;

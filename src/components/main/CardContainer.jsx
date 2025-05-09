@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Card from "./Card";
 
-function cardContainer() {
+function CardContainer() {
 
     /* This will render: 5 Card components */
 
@@ -16,4 +16,4 @@ function cardContainer() {
     );
 }
 
-export default cardContainer;
+export default CardContainer;

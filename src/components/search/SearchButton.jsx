@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
-function searchButton() {
+function SearchButton() {
     return (<div>
         <h2>searchButton</h2>
         </div>)
 
 }
-export default searchButton;
+export default SearchButton;

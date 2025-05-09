@@ -1,11 +1,14 @@
 import React, { useState } from "react";
+import Main from "./main/Main";
+import Sidebar from "./sidebar/Sidebar";
 
 function App() {
 
   /* This SHOULD render: Main and Sidebar*/
   return (
-    <div>
-      <h1>My App</h1>
+    <div className="appContainer">
+      <Sidebar />
+      <Main />
     </div>
   );
 

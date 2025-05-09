@@ -1,0 +1,104 @@
+:root {
+    /* Source: https://coolors.co/ */
+    --primary-bg-color: #623CEA;
+    --secondary-bg-color: #2A2B2E;
+    --primary-color: #DFF3E4;
+    --secondary-color: #731DD8;
+    --tertiary-color: #FC5130;
+    --test: #5B34EA;
+    
+    /* Other config */
+    --font-family: 'Arial', sans-serif;
+    --font-size: 16px;
+    --line-height: 1.5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.appContainer {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--primary-bg-color);
+    color: var(--primary-color);
+    font-family: var(--font-family);
+}
+.main {
+    margin-left: 250px;
+}
+.searchContainer {
+    border: 3px solid var(--secondary-bg-color);
+    border-radius: 1em;
+    padding: .75em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.searchContainer input {
+    border: none;
+    outline: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-size: var(--font-size);
+}
+.searchContainer button {
+    background-color: var(--secondary-bg-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: var(--font-size);
+}
+.searchContainer button:hover {
+    background-color: var(--tertiary-color);
+    transition: background-color 0.3s ease;
+}
+
+.mainContent {
+    border: 1px solid black;
+    border-radius: 1em;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sidebar {
+    position: fixed;
+    left: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: var(--secondary-bg-color);
+    padding: 20px;
+    color: var(--primary-color);
+    text-align: center;
+}
+/* TODO: Add homebutton styling somewhere here. */
+.sidebar .sidebarFooter {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+.sidebar .sidebarFooter ul {
+    list-style: none;
+    padding: 0;
+}
+@media (max-width: 1080px) {
+    .sidebar {
+        position: fixed;
+        left: -250px;
+        transition: left 0.5s ease;
+    }
+    .main {
+        margin-left: 0;
+    }
+}

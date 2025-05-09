@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function mainContent() {
+function MainContent() {
 
     /* This will render: At least 3 'cardContainer' in the set of a list */
 
@@ -8,4 +8,4 @@ function mainContent() {
         <h2>mainContent</h2>
         </div>)
 }
-export default mainContent;
+export default MainContent;
