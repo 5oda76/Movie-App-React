@@ -5,7 +5,7 @@ function App() {
   /* This SHOULD render: Main and Sidebar*/
   return (
     <div>
-      <span>Movie App</span>
+      <h1>My App</h1>
     </div>
   );
 

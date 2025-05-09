@@ -17,6 +17,7 @@ async function getJsonData (type, jsonReturnType, query) {
         const data = await apiRequest(type, jsonReturnType, query);
         return data;
     } catch (error) {
+        /* Cant rethrow to next function, just log it in the console */
         console.error("Error fetching data:", error);
         return;
     }
@@ -30,8 +31,7 @@ async function apiRequest(type, jsonReturnType, query) {
         const data =  await fetchApiData(apiRequestLink);
         return data;
     } catch (error) {
-        console.error("Error constructing API link:", error);
-        return;
+        throw new Error("Error in apiRequest: " + error.message);
     }
 }
 
@@ -48,7 +48,7 @@ async function fetchApiData(apiRequestLink) {
             }
         }
     } catch (error) {
-        console.log("API request failed.", error);
+        throw new Error("Error fetching data.");
     }
 
 }
