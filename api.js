@@ -1,6 +1,5 @@
 let apiLink = "http://www.omdbapi.com/?r=json&apikey=";
 const apikey = "e8102b15";
-let API = apiLink + apikey;
 
 /* 
 
@@ -11,9 +10,85 @@ Params:
 
 */
 
-/* 'movie' OR 'series', 's' OR 't', name */
-async function apiRequest(movieOrSeries, searchType, query) {
 
 
+async function getJsonData (type, jsonReturnType, query) {
+    try {
+        const data = await apiRequest(type, jsonReturnType, query);
+        return data;
+    } catch (error) {
+        console.error("Error fetching data:", error);
+        return;
+    }
+}
+/* 'movie' OR 'series [string]', 's' OR 't' [string], name [string] */
+async function apiRequest(type, jsonReturnType, query) {
 
+    try {
+        let apiRequestLink = constructApiLink(type, jsonReturnType, query);
+        console.log(apiRequestLink);
+        const data =  await fetchApiData(apiRequestLink);
+        return data;
+    } catch (error) {
+        console.error("Error constructing API link:", error);
+        return;
+    }
+}
+
+async function fetchApiData(apiRequestLink) {
+
+    try {
+        const response = await fetch(apiRequestLink);
+        if(response.ok) {
+            const data = await response.json();
+            if(data.Response === "True") {
+                return data;
+            } else {
+                throw new Error(data.Error);
+            }
+        }
+    } catch (error) {
+        console.log("API request failed.", error);
+    }
+
+}
+
+function constructApiLink(type, jsonReturnType, query) {
+    let API_LINK = apiLink + apikey;
+
+    if(checkApiConditions(type, jsonReturnType, query)) {
+        throw new Error("Invalid parameters");
+    }
+    
+    if(type === "movie") {
+        API_LINK += "&type=movie";
+    } else if(type === "series") {
+        API_LINK += "&type=series";
+    } else {
+        throw new Error("Invalid type");
+    }
+
+    if(jsonReturnType === "string" || jsonReturnType === "char") {
+        API_LINK += "&t=" + query;
+    } 
+    else if(jsonReturnType === "array") {
+        API_LINK += "&s=" + query;
+    } else {
+        throw new Error("Invalid jsonReturnType");
+    }
+    return API_LINK;
+}
+
+function checkApiConditions(type, jsonReturnType, query) {
+    if(!type.includes("movie") || !type.includes("series")) {
+        return false;
+    }
+    if(!jsonReturnType.includes("string") || !jsonReturnType.includes("char") || !jsonReturnType.includes("array")) {
+        return false;
+    }
+    if(!query) {
+        return false;
+    }
+    
+    return true;
 }
