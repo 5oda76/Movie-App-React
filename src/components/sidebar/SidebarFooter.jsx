@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import AboutButton from "./AboutButton";
 import ImpressumButton from "./ImpressumButton";
 
-function SidebarFooterContent() {
+function SidebarFooter() {
 
     /* This will render: aboutButton, impressumButton */
 
@@ -10,10 +10,10 @@ function SidebarFooterContent() {
         <div>
             <div className="sidebarFooter">
                 <ul>
-                    <li>
+                    <li className="footerElement">
                         <AboutButton />
                     </li>
-                    <li>
+                    <li className="footerElement">
                         <ImpressumButton />
                     </li>
                 </ul>
@@ -21,4 +21,4 @@ function SidebarFooterContent() {
         </div>
     );
 }
-export default SidebarFooterContent;
+export default SidebarFooter;

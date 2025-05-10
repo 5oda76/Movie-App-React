@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import HomeButton from "./HomeButton";
+import SidebarHeader from "./SidebarHeader";
 import SidebarFooter from "./SidebarFooter";
 
 function Sidebar() {
@@ -9,12 +9,8 @@ function Sidebar() {
     return (
         <div>
             <div className="sidebar">
-                <div className="homeButton">
-                    <HomeButton />
-                </div>
-                <div className="sidebarFooter">
-                    <SidebarFooter />
-                </div>
+                <SidebarHeader />
+                <SidebarFooter />
             </div>
         </div>
     );

@@ -3,7 +3,11 @@ import React, { useState } from "react";
 function ImpressumButton() {
     return (
         <div>
-            <button>Impressum</button>
+            <div className="impressumButton">
+                <div className="buttonContainer">   
+                    <i class="fa-regular fa-file"></i><button>Impressum</button>
+                </div>
+            </div>
         </div>
     );
 }
