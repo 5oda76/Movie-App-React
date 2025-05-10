@@ -29,32 +29,34 @@
 }
 .main {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     margin-left: 250px;
     padding: 1em;
 }
 .searchContainer {
-    border: 3px solid var(--secondary-bg-color);
+    border: 5px solid var(--secondary-bg-color);
     border-radius: 1em;
     padding: .75em;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 20px 0;
-    min-width: 400px;
-    width: 50%;
 }
-
 .searchContainer input {
     border: none;
     outline: none;
     padding: 5px 10px;
     border-radius: 5px;
     margin-right: 10px;
+    background: none;
+    border: 3px solid var(--secondary-bg-color);
     font-size: var(--font-size);
+    transition: .5s ease;
+}
+.searchContainer input:hover {
+    border: 1px solid var(--secondary-bg-color);
 }
 .searchContainer button {
     background-color: var(--secondary-bg-color);
@@ -64,6 +66,7 @@
     border-radius: 5px;
     cursor: pointer;
     font-size: var(--font-size);
+    letter-spacing: 1px;
 }
 .searchContainer button:hover {
     background-color: var(--tertiary-color);
@@ -73,7 +76,7 @@
 .mainContent {
     border: 1px solid black;
     border-radius: 1em;
-    padding: 1em;
+    padding: .5em;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -82,10 +85,40 @@
 .cardContainer {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
     justify-content: center;
+    gap: 20px;
+    padding: 1em;
 }
+.cardContainer .card {
+    background-color: var(--secondary-bg-color);
+    border-radius: 1em;
+    padding: 1em;
+    min-width: 300px;
+    text-align: center;
+    color: var(--primary-color);
+    transition: transform 0.3s ease;
+}
+.cardContainer .card:hover {
+    transform: scale(1.05);
+}
+.cardContainer .card .cardHeader {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+.cardContainer .card .cardContent {
+    border: 1px solid var(--secondary-color);
+    border-radius: 1em;
+}
+.cardContainer .card .cardContent .imageContainer {
+    width: 100%;
+    padding: 1px;
+}
+.cardContainer .card .cardContent .imageContainer img{
 
+}
+.cardContainer .card .cardFooter {
+    padding: .5em;
+}
 .sidebar {
     position: fixed;
     left: 0;
@@ -96,7 +129,6 @@
     color: var(--primary-color);
     text-align: center;
 }
-
 /* TODO: Add homebutton styling somewhere here. */
 .sidebar .sidebarFooter {
     position: absolute;
