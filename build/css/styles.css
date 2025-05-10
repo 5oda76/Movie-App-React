@@ -28,13 +28,7 @@
     font-family: var(--font-family);
 }
 .main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    flex-wrap: wrap;
     margin-left: 250px;
-    padding: 1em;
 }
 .searchContainer {
     border: 3px solid var(--secondary-bg-color);
@@ -44,8 +38,6 @@
     justify-content: center;
     align-items: center;
     margin: 20px 0;
-    min-width: 400px;
-    width: 50%;
 }
 
 .searchContainer input {
@@ -78,14 +70,6 @@
     flex-direction: column;
     align-items: center;
 }
-
-.cardContainer {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-}
-
 .sidebar {
     position: fixed;
     left: 0;
@@ -96,7 +80,6 @@
     color: var(--primary-color);
     text-align: center;
 }
-
 /* TODO: Add homebutton styling somewhere here. */
 .sidebar .sidebarFooter {
     position: absolute;

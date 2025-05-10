@@ -10,7 +10,11 @@ function CardContainer() {
 
     /*  */
     return (
-        <div>
+        <div className="cardContainer">
+            <Card />
+            <Card />
+            <Card />
+            <Card />
             <Card />
         </div>
     );

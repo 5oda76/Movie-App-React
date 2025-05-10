@@ -4,7 +4,7 @@ function Card(props) {
 
     /* */
     return (<div>
-        <h2>Card</h2>
+        <h2>Casdfasdfasdfsdfasdfsard</h2>
     </div>)
 }
 
