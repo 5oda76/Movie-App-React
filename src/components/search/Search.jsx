@@ -9,7 +9,7 @@ function Search() {
     const [search, setSearch] = useState("");
     const [results, setResults] = useState([]);
 
-    function fetchData(event) {
+    async function fetchData(event) {
         
         const searchValue = event.target.value;
 
@@ -19,7 +19,7 @@ function Search() {
 
                 /* Use API to fetch requests */
                 /* This allows us to easily implement a filter to be honest. */
-                const data = getJsonData("movie", "array", searchValue);
+                const data = await getJsonData("movie", "array", searchValue);
 
                 console.log(data);
 
