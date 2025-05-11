@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 
 function SearchButton() {
-    return (<div>
-        <h2>searchButton</h2>
-        </div>)
+    return (
+        <div>
+            <button>Suche</button>
+        </div>
+    );
 
 }
 export default SearchButton;

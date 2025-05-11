@@ -9,9 +9,8 @@ function Main() {
     return (
         <div>
             <div className="main">
-                <div className="searchContainer">
-                    <input type="text" />
-                    <button>Suche</button>
+                <div className="search">
+                    <SearchContainer />
                 </div>
                 <div className="mainContent">
                     <MainContent />
