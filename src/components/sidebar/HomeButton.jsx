@@ -5,7 +5,7 @@ function HomeButton() {
         <div>
             <div className="homeButton">
                 <div className="buttonContainer"> 
-                    <i class="fa-solid fa-house"></i><button>Home</button>
+                    <i className="fa-solid fa-house"></i><button>Home</button>
                 </div>
             </div>
         </div>

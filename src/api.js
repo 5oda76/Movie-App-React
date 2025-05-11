@@ -56,7 +56,7 @@ async function fetchApiData(apiRequestLink) {
 function constructApiLink(type, jsonReturnType, query) {
     let API_LINK = apiLink + apikey;
 
-    if(checkApiConditions(type, jsonReturnType, query)) {
+    if(!checkApiConditions(type, jsonReturnType, query)) {
         throw new Error("Invalid parameters");
     }
     
@@ -80,15 +80,23 @@ function constructApiLink(type, jsonReturnType, query) {
 }
 
 function checkApiConditions(type, jsonReturnType, query) {
-    if(!type.includes("movie") || !type.includes("series")) {
+    const validTypes = ["movie", "series"];
+    const validReturnTypes = ["string", "char", "array"];
+
+
+    if (!validTypes.includes(type)) {
         return false;
     }
-    if(!jsonReturnType.includes("string") || !jsonReturnType.includes("char") || !jsonReturnType.includes("array")) {
+    if (!validReturnTypes.includes(jsonReturnType)) {
         return false;
     }
-    if(!query) {
+    if (!query) {
         return false;
     }
-    
+
     return true;
 }
+
+
+export { getJsonData };
+ 

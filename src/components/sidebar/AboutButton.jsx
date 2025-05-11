@@ -5,7 +5,7 @@ function AboutButton() {
         <div>
             <div className="aboutButton">
                 <div className="buttonContainer">
-                    <i class="fa-solid fa-question"></i><button>About</button>  
+                    <i className="fa-solid fa-question"></i><button>About</button>  
                 </div>
             </div>
         </div>

@@ -5,7 +5,7 @@ function ImpressumButton() {
         <div>
             <div className="impressumButton">
                 <div className="buttonContainer">   
-                    <i class="fa-regular fa-file"></i><button>Impressum</button>
+                    <i className="fa-regular fa-file"></i><button>Impressum</button>
                 </div>
             </div>
         </div>
