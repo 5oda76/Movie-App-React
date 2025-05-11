@@ -13,10 +13,12 @@ function Search() {
         
         const searchValue = event.target.value;
 
-        if(searchValue.length > 0) {
+        if(searchValue.length >= 2) {
          
             try {
 
+                /* Use API to fetch requests */
+                /* This allows us to easily implement a filter to be honest. */
                 const data = getJsonData("movie", "array", searchValue);
 
                 console.log(data);
