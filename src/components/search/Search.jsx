@@ -27,6 +27,13 @@ function Search() {
 
                     setResults(data.Search);
 
+                    /* Idea: TODO: 
+
+                        let this render the whole MainContent component with the props as param to then set the values 
+                        to the cards after they are passed to the CardContainer (I have no clue if this works)
+                    
+                    */
+
                 }
 
             } catch(error) {
