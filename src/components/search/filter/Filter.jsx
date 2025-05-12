@@ -8,7 +8,7 @@ function Filter() {
     return (
 
         <div>
-            <button onClick={showBoxxes}><i className="fa-solid fa-filter"></i></button>
+            <button><i className="fa-solid fa-filter"></i></button>
         </div>
 
     );
