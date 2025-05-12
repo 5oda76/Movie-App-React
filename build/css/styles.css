@@ -5,8 +5,8 @@
     --primary-color: #DFF3E4;
     --secondary-color: #731DD8;
     --tertiary-color: #FC5130;
-    --test: #5B34EA;
-    
+    --test-color: #31D843 ;
+
     /* Other config */
     --font-family: 'Arial', sans-serif;
     --font-size: 16px;
@@ -43,6 +43,7 @@
     justify-content: center;
     align-items: center;
     margin: 20px 0;
+    gap: 5px;
 }
 .searchContainer input {
     border: none;
@@ -145,7 +146,7 @@
     border: 1px solid var(--primary-color);
     border-radius: 1em;
 }
-.sidebar .sidebarHeader button {
+.sidebar .sidebarHeader a {
     background-color: var(--secondary-bg-color);
     color: var(--primary-color);
     padding: .5em;
@@ -154,7 +155,7 @@
     font-size: var(--font-size);
     letter-spacing: 5px;
 }
-.sidebar .sidebarFooter .footerElement button {
+.sidebar .sidebarFooter .footerElement a {
     background-color: var(--secondary-bg-color);
     color: var(--primary-color);
     border: none;
@@ -165,7 +166,7 @@
     letter-spacing: 1px;
     transition: ease 0.5s;
 }
-.sidebar .sidebarFooter .footerElement button:hover {
+.sidebar .sidebarFooter .footerElement a:hover {
     letter-spacing: 3px;
     background-color: var(--tertiary-color);
 }
