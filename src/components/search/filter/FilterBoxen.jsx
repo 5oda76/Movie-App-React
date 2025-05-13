@@ -10,6 +10,7 @@ function FilterBoxen(props) {
         } else {
             setSelected(value);
         }
+        props.handleFilterChange(value); // Call the parent function with the selected value
     };
 
     return(

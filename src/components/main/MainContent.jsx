@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import CardContainer from "./CardContainer";
 
-function MainContent() {
+function MainContent(props) {
 
     /* This will render: At least 3 'cardContainer' in the set of a list */
 

@@ -1,13 +1,10 @@
-import React, { useState } from "react";
-import { getJsonData } from "../../api.js";
-import { useEffect } from "react";
+import React from "react";
 
 function SearchButton(props) {
 
-
     return (
         <div>
-            <button onClick={props.fetchData}>Suche</button>
+            <button onClick={()=>{props.handleSearchButtonClick(props.searchBarValue,props.filterValue)}}>Suche</button>
         </div>
     );
 

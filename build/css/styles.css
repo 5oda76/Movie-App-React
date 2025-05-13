@@ -73,6 +73,26 @@
     background-color: var(--tertiary-color);
     transition: background-color 0.3s ease;
 }
+.searchContainer .filterCheckboxContainer {
+    display: none;
+    border: 3px solid var(--secondary-bg-color);
+    padding: .5em;
+    border-radius: .5em;
+    background-color: var(--secondary-bg-color);
+}
+.searchContainer .filterCheckboxContainer label {
+    padding: 5px;
+}
+.searchContainer .filterCheckboxContainer input,label {
+    cursor: pointer;
+}
+.searchContainer .filterContainer {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    font-weight:600;
+    letter-spacing: 1px;
+}
 
 .mainContent {
     border: 1px solid black;
@@ -154,6 +174,7 @@
     cursor: pointer;
     font-size: var(--font-size);
     letter-spacing: 5px;
+    text-decoration: none;
 }
 .sidebar .sidebarFooter .footerElement a {
     background-color: var(--secondary-bg-color);
@@ -165,6 +186,7 @@
     font-size: var(--font-size);
     letter-spacing: 1px;
     transition: ease 0.5s;
+    text-decoration: none;
 }
 .sidebar .sidebarFooter .footerElement a:hover {
     letter-spacing: 3px;

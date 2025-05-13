@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
-function Search() {
-
+function Search(props) {
+    
     /* This has to use 'useState' to update the cards within the containers related to a set array / API */
     return (
         <div>
-            <input type="text" placeholder="Find something..."/>
+            <input type="text" placeholder="Find something..." onChange={props.handleSearchChange} value={props.searchBarValue}/>
         </div>
     );
 }

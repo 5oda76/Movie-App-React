@@ -3,11 +3,11 @@ import FilterBoxen from "./FilterBoxen";
 
 
 
-function Filter() {
+function Filter(props) {
 
     const [showFilters, setShowFilters] = useState("");
 
-    const toggleFilters = () => {
+    function toggleFilters(){
         setShowFilters(!showFilters);
     }
 
@@ -15,7 +15,7 @@ function Filter() {
         <div>
             <div className="filterContainer">
                 <button onClick={toggleFilters}><i className="fa-solid fa-filter"></i></button>
-                <FilterBoxen show={showFilters} />
+                <FilterBoxen show={showFilters} handleFilterChange={props.handleFilterChange}/>
             </div>
         </div>
 
