@@ -1,4 +1,4 @@
-let apiLink = "http://www.omdbapi.com/?r=json&apikey=";
+let apiLink = "https://www.omdbapi.com/?r=json&apikey=";
 const apikey = "e8102b15";
 
 /* 
@@ -10,9 +10,8 @@ Params:
 
 */
 
-
-
 async function getJsonData (type, jsonReturnType, query) {
+
     try {
         const data = await apiRequest(type, jsonReturnType, query);
         return data;
@@ -24,7 +23,6 @@ async function getJsonData (type, jsonReturnType, query) {
 }
 /* 'movie' OR 'series [string]', 's' OR 't' [string], name [string] */
 async function apiRequest(type, jsonReturnType, query) {
-
     try {
         let apiRequestLink = constructApiLink(type, jsonReturnType, query);
         console.log(apiRequestLink);
@@ -55,17 +53,26 @@ async function fetchApiData(apiRequestLink) {
 
 function constructApiLink(type, jsonReturnType, query) {
     let API_LINK = apiLink + apikey;
+    const invalidTypes = ["<empty string>", "empty", "null", ""];
 
     if(!checkApiConditions(type, jsonReturnType, query)) {
         throw new Error("Invalid parameters");
     }
     
+    try {
+        if(type === "" || invalidTypes.includes(type)) {
+            console.log("Invalid type detected");
+            API_LINK += "";
+        }
+    } catch(error) {
+        type === "";
+    }
     if(type === "movie") {
         API_LINK += "&type=movie";
     } else if(type === "series") {
         API_LINK += "&type=series";
     } else {
-        throw new Error("Invalid type");
+        throw new error("Invalid / Uncaught type");
     }
 
     if(jsonReturnType === "string" || jsonReturnType === "char") {

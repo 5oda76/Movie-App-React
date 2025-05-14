@@ -19,12 +19,11 @@ function Main() {
     }
 
     useEffect(() => {
-        console.log(search);
-            /* async function fetchData() { //wirft Fehler
+            console.log(search.filter);
+            async function fetchData() {
                 if(search.value.length >= 2) {
-            
                     try {
-                        const data = await getJsonData(search.value, "array", search.filter);
+                        const data = await getJsonData(search.filter, "array", search.value);
 
                         console.log(data);
 
@@ -36,9 +35,12 @@ function Main() {
                         throw new Error("Error fetching data");
                     }
 
+                } else {
+                    console.log("Search value not valid.");
                 }
-            }fetchData(); */
-        }),[search];
+            }fetchData();
+            console.log(results);
+        }),[];
 
     return (
         <div>
