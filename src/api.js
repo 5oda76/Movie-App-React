@@ -53,7 +53,7 @@ async function fetchApiData(apiRequestLink) {
 
 function constructApiLink(type, jsonReturnType, query) {
     let API_LINK = apiLink + apikey;
-    const invalidTypes = ["<empty string>", "empty", null, ""];
+    const invalidTypes = ["<empty string>", "empty", null, "", "series,movies"];
 
     if(!checkApiConditions(type, jsonReturnType, query)) {
         throw new Error("Invalid parameters");
@@ -86,13 +86,8 @@ function constructApiLink(type, jsonReturnType, query) {
 }
 
 function checkApiConditions(type, jsonReturnType, query) {
-    const validTypes = ["movie", "series", "", null];
     const validReturnTypes = ["string", "char", "array"];
 
-
-    if (!validTypes.includes(type)) {
-        return false;
-    }
     if (!validReturnTypes.includes(jsonReturnType)) {
         return false;
     }
