@@ -34,8 +34,6 @@ function Main() {
                     try {
                         const data = await getJsonData(search.filter, "array", search.value);
 
-                        console.log(data);
-
                         if(data) {
                             setResults(data.Search);
                         }
@@ -48,7 +46,6 @@ function Main() {
                     console.log("Search value not valid.");
                 }
             }fetchData();
-            console.log(results);
         }),[search];
 
     return (

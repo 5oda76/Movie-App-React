@@ -53,26 +53,24 @@ async function fetchApiData(apiRequestLink) {
 
 function constructApiLink(type, jsonReturnType, query) {
     let API_LINK = apiLink + apikey;
-    const invalidTypes = ["<empty string>", "empty", "null", ""];
+    const invalidTypes = ["<empty string>", "empty", null, ""];
 
     if(!checkApiConditions(type, jsonReturnType, query)) {
         throw new Error("Invalid parameters");
     }
     
     try {
-        if(type === "" || invalidTypes.includes(type)) {
+        if(invalidTypes.includes(type)) {
             console.log("Invalid type detected");
             API_LINK += "";
         }
     } catch(error) {
-        type === "";
+        type = "";
     }
     if(type === "movie") {
         API_LINK += "&type=movie";
     } else if(type === "series") {
         API_LINK += "&type=series";
-    } else {
-        throw new error("Invalid / Uncaught type");
     }
 
     if(jsonReturnType === "string" || jsonReturnType === "char") {
@@ -83,11 +81,12 @@ function constructApiLink(type, jsonReturnType, query) {
     } else {
         throw new Error("Invalid jsonReturnType");
     }
+    console.log(API_LINK);
     return API_LINK;
 }
 
 function checkApiConditions(type, jsonReturnType, query) {
-    const validTypes = ["movie", "series"];
+    const validTypes = ["movie", "series", "", null];
     const validReturnTypes = ["string", "char", "array"];
 
 
