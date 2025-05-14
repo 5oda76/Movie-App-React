@@ -2,23 +2,25 @@ import React, { useState } from "react";
 
 function Card(props) {
 
+    const cardData = props.data;
+
     /* */
     return (
         <div>
             <div className="card">
                 <div className="cardHeader">
-                    Title
+                    {cardData.Title}
                 </div>
                 <div className="cardContent">
                     <div className="imageContainer">
-
-                    </div>
-                    <div className="cardInfo">
-                        <p>Info text bla</p>
+                        <img src={cardData.Poster} alt="CardElementPicture" />
                     </div>
                 </div>
                 <div className="cardFooter">
-                    <p>Footer content bla</p>
+                    <p>{cardData.Year}</p>
+                    <div className="cardInfo">
+                        <p>Type: {cardData.Type}</p>
+                    </div>
                 </div>
             </div>
         </div>

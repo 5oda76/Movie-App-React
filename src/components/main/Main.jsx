@@ -38,7 +38,6 @@ function Main() {
 
                         if(data) {
                             setResults(data.Search);
-                            console.log(data);
                         }
 
                     } catch(error) {
