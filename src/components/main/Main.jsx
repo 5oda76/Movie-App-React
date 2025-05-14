@@ -28,7 +28,9 @@ function Main() {
     }
 
     useEffect(() => {
-            console.log(search.filter);
+            /* 
+                If the type is empty here or not clicked/used at all, it will be handled by api.js 
+            */
             async function fetchData() {
                 if(search.value.length >= 2) {
                     try {
@@ -36,6 +38,7 @@ function Main() {
 
                         if(data) {
                             setResults(data.Search);
+                            console.log(data);
                         }
 
                     } catch(error) {
@@ -46,7 +49,7 @@ function Main() {
                     console.log("Search value not valid.");
                 }
             }fetchData();
-        }),[search];
+        },[search]);
 
     return (
         <div>
