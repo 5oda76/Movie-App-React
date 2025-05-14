@@ -4,7 +4,7 @@ function SearchButton(props) {
 
     return (
         <div>
-            <button onClick={()=>{props.handleSearchButtonClick(props.searchBarValue,props.filterValue)}}>Suche</button>
+            <button onClick={()=>{props.handleSearchButtonClick(props.searchBarValue,props.selectedValue)}}>Suche</button>
         </div>
     );
 

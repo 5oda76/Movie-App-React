@@ -1,17 +1,7 @@
-import React, { useState } from "react";
+import {react, useState} from 'react';
 
 function FilterBoxen(props) {
-
-    const [selected, setSelected] = useState(null);
-
-    const handleCheckboxChange = (value) => {
-        if (selected === value) {
-            setSelected(null); // Uncheck if clicked again
-        } else {
-            setSelected(value);
-        }
-        props.handleFilterChange(value); // Call the parent function with the selected value
-    };
+    
 
     return(
         <div>
@@ -19,23 +9,24 @@ function FilterBoxen(props) {
             <label>
                 <input
                     type="checkbox"
-                    checked={selected === 'series'}
-                    onChange={() => handleCheckboxChange('series')}
+                    onChange={props.handleFilterChange}
+                    value="series"
+                    checked={props.selectedValue.series}
                 />
                 Series
             </label>
             <label>
                 <input
                     type="checkbox"
-                    checked={selected === 'movies'}
-                    onChange={() => handleCheckboxChange('movies')}
+                    onChange={props.handleFilterChange}
+                    value="movies"
+                    checked={props.selectedValue.movies}
                 />
                 Movies
             </label>
             </div>
         </div>
     );
-
-
 }
+
 export default FilterBoxen;

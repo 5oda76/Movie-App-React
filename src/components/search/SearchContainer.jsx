@@ -5,13 +5,20 @@ import Filter from "./filter/Filter";
 
 function SearchContainer(props) {
     const [searchBarValue, setSearchBarValue] = useState("");
-    const [filterValue, setFilterValue] = useState("");
+    const [selectedValue, setSelectedValue] = useState({
+            series: false,
+            movies: false,
+    });
 
     function handleSearchChange(event) {
         setSearchBarValue(event.target.value);
     }
-    function handleFilterChange(selectedValue) {
-        setFilterValue(selectedValue);
+
+    function handleFilterChange(event) {
+        const obj = { [event.target.value]: event.target.checked};
+        setSelectedValue((prev)=>{
+            return({...prev, ...obj});
+        });
     }
 
     return (
@@ -21,10 +28,10 @@ function SearchContainer(props) {
                     <Search handleSearchChange={handleSearchChange} searchBarValue={searchBarValue}/>
                 </div>
                 <div className="searchButton">
-                    <SearchButton handleSearchButtonClick={props.handleSearchButtonClick} searchBarValue={searchBarValue} filterValue={filterValue}/>
+                    <SearchButton handleSearchButtonClick={props.handleSearchButtonClick} searchBarValue={searchBarValue} selectedValue={selectedValue}/>
                 </div>
                 <div className="filterButton">
-                    <Filter handleFilterChange={handleFilterChange} filterValue={filterValue}/>
+                    <Filter handleFilterChange={handleFilterChange} selectedValue={selectedValue}/>
                 </div>
             </div>
         </div>

@@ -15,7 +15,7 @@ function Filter(props) {
         <div>
             <div className="filterContainer">
                 <button onClick={toggleFilters}><i className="fa-solid fa-filter"></i></button>
-                <FilterBoxen show={showFilters} handleFilterChange={props.handleFilterChange}/>
+                <FilterBoxen show={showFilters} handleFilterChange={props.handleFilterChange} selectedValue={props.selectedValue}/>
             </div>
         </div>
 

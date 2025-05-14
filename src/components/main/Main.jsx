@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import MainContent from "./MainContent";
 import SearchContainer from "../search/SearchContainer";
 import { getJsonData } from "../../api.js";
-import Search from "../search/Search.jsx";
 
 function Main() {
     const [search, setSearch] = useState({
@@ -11,7 +10,17 @@ function Main() {
     });
     const [results, setResults] = useState([]);
 
-    function handleSearchButtonClick(searchBarValue,filterValue) {
+    function handleSearchButtonClick(searchBarValue,selectedValue) {
+        let filterValue = null;
+        if(selectedValue.series && selectedValue.movies) {
+            filterValue = "series,movies";
+        }
+        else if(selectedValue.series) {
+            filterValue = "series";
+        }
+        else if(selectedValue.movies) {
+            filterValue = "movies";
+        }
         setSearch({
             value: searchBarValue,
             filter: filterValue
@@ -40,7 +49,7 @@ function Main() {
                 }
             }fetchData();
             console.log(results);
-        }),[];
+        }),[search];
 
     return (
         <div>
