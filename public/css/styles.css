@@ -1,14 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&family=Dela+Gothic+One&family=Josefin+Sans:wght@500&family=Jost:wght@500&family=Orbitron:wght@600&display=swap");
+
 :root {
     /* Source: https://coolors.co/ */
-    --primary-bg-color: #623CEA;
+    --primary-bg-color: #2f23b9;
+    /*--primary-bg-color: #623CEA;*/
     --secondary-bg-color: #2A2B2E;
     --primary-color: #DFF3E4;
     --secondary-color: #731DD8;
     --tertiary-color: #FC5130;
-    --test-color: #31D843 ;
+    --test-color: #31D843;
+
 
     /* Other config */
-    --font-family: 'Arial', sans-serif;
+    --font-family: 'Jost', sans-serif;
     --font-size: 16px;
     --line-height: 1.5;
 }
@@ -72,6 +76,7 @@
 .searchContainer button:hover {
     background-color: var(--tertiary-color);
     transition: background-color 0.3s ease;
+    box-shadow: 0 0 10px var(--tertiary-color), 0 0 20px var(--tertiary-color);
 }
 .searchContainer .filterCheckboxContainer {
     display: none;
@@ -88,6 +93,7 @@
 }
 .searchContainer .filterContainer {
     display: flex;
+    flex-wrap: wrap;
     gap: 5px;
     align-items: center;
     font-weight:600;
@@ -122,6 +128,8 @@
 }
 .cardContainer .card:hover {
     transform: scale(1.05);
+    box-shadow: 0 0 15px var(--tertiary-color), 0 0 30px var(--secondary-color);
+    backdrop-filter: blur(3px);
 }
 .cardContainer .card .cardHeader {
     font-size: 1.5em;
@@ -140,8 +148,15 @@
     min-width: 150px; /* Set min width, to ensure that the images are not invisible due to shrinking */
     height: 270px;
     object-fit: cover; /* Ensures image fills container without distortion */
-    border-radius: 0.5em;
+    border: hidden;
+    border-radius: 1em;
+    transition: 0.5s ease-out;
 }
+.cardContainer .card .cardContent .imageContainer img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px var(--tertiary-color);
+}
+
 .cardContainer .card .cardHeader,
 .cardContainer .card .cardFooter {
     overflow: hidden;
@@ -186,6 +201,12 @@
     font-size: var(--font-size);
     letter-spacing: 5px;
     text-decoration: none;
+    transition: 1s ease; 
+}
+.sidebar .sidebarHeader a:hover {
+    letter-spacing: 10px;
+    padding: 1em;
+    font-weight: 600;
 }
 .sidebar .sidebarFooter .footerElement a {
     background-color: var(--secondary-bg-color);
@@ -201,6 +222,7 @@
 }
 .sidebar .sidebarFooter .footerElement a:hover {
     letter-spacing: 3px;
+    font-weight: 600;
     background-color: var(--tertiary-color);
 }
 .sidebar .sidebarFooter ul {
@@ -217,3 +239,4 @@
         margin-left: 0;
     }
 }
+
