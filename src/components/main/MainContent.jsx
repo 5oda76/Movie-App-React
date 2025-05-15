@@ -15,7 +15,7 @@ function MainContent(props) {
         return parts;
     }
 
-    const arrayPart = manageArray(props.results, 5);
+    const arrayPart = manageArray(props.results, 3);
 
     /* This will render: At least 3 'cardContainer' in the set of a list */
     return (

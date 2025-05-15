@@ -7,7 +7,7 @@ function Card(props) {
     /* */
     return (
         <div>
-            <div className="card">
+            <div className="card" key={props.i}>
                 <div className="cardHeader">
                     {cardData.Title}
                 </div>

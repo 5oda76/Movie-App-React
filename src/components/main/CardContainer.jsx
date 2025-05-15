@@ -13,8 +13,8 @@ function CardContainer(props) {
     return (
         <div className="cardContainer">
             {
-                data.map((element) => (
-                    <Card data={element} />
+                data.map((element, index) => (
+                    <Card data={element} i={index}/>
                 ))
             }
         </div>
