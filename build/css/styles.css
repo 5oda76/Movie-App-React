@@ -27,7 +27,6 @@
     display: flex;
     justify-content: center;
     min-height: 100vh;
-    background-color: var(--primary-bg-color);
     color: var(--primary-color);
     font-family: var(--font-family);
 }
@@ -48,6 +47,7 @@
     align-items: center;
     margin: 20px 0;
     gap: 5px;
+    background-color: var(--secondary-color);
 }
 .searchContainer input {
     border: none;
@@ -120,8 +120,8 @@
     background-color: var(--secondary-bg-color);
     border-radius: 1em;
     padding: 1em;
-    width: 300px;
-    height: 400px;
+    width: 400px;
+    height: 45em;
     text-align: center;
     color: var(--primary-color);
     transition: transform 0.3s ease;
@@ -138,15 +138,15 @@
 .cardContainer .card .cardContent {
     border: 1px solid var(--secondary-color);
     border-radius: 1em;
+    height: 450px;
 }
 .cardContainer .card .cardContent .imageContainer {
-    width: 100%;
     padding: 1px;
 }
 .cardContainer .card .cardContent .imageContainer img {
     width: 100%;
     min-width: 150px; /* Set min width, to ensure that the images are not invisible due to shrinking */
-    height: 270px;
+    min-height: 270px;
     object-fit: cover; /* Ensures image fills container without distortion */
     border: hidden;
     border-radius: 1em;
