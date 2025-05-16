@@ -260,3 +260,47 @@ body::before {
     }
 }
 
+.aboutContainer {
+  padding: 2rem;
+  color: #fff;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 1rem;
+  margin-top: 4rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.aboutContainer h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.aboutContainer p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.impressumContainer {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 1rem;
+  margin-top: 4rem;
+  line-height: 1.6;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.impressumContainer h1 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.impressumContainer p {
+  margin-bottom: 1rem;
+}
