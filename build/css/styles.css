@@ -2,8 +2,7 @@
 
 :root {
     /* Source: https://coolors.co/ */
-    --primary-bg-color: #2f23b9;
-    /*--primary-bg-color: #623CEA;*/
+    --primary-bg-color: #623CEA;
     --secondary-bg-color: #2A2B2E;
     --primary-color: #DFF3E4;
     --secondary-color: #731DD8;
@@ -22,6 +21,27 @@
     padding: 0;
     box-sizing: border-box;
 }
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed; /* Change to fixed so it stays put while page scrolls */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/background.jpg'); /* adjust path as needed */
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px);
+    z-index: -1;
+    transform: scale(1.05); /* Prevent edge clipping after blur */
+}
+
 
 .appContainer {
     display: flex;
@@ -47,7 +67,7 @@
     align-items: center;
     margin: 20px 0;
     gap: 5px;
-    background-color: var(--secondary-color);
+    background-color: var(--primary-bg-color);
 }
 .searchContainer input {
     border: none;
@@ -121,7 +141,7 @@
     border-radius: 1em;
     padding: 1em;
     width: 400px;
-    height: 45em;
+    height: 35em;
     text-align: center;
     color: var(--primary-color);
     transition: transform 0.3s ease;
@@ -135,24 +155,24 @@
     font-size: 1.5em;
     margin-bottom: 10px;
 }
-.cardContainer .card .cardContent {
-    border: 1px solid var(--secondary-color);
-    border-radius: 1em;
-    height: 450px;
+.cardContainer .card:hover .cardHeader {
+    /* Thanks to stackoverflow */
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
 }
-.cardContainer .card .cardContent .imageContainer {
+.cardContainer .card .imageContainer {
     padding: 1px;
 }
-.cardContainer .card .cardContent .imageContainer img {
-    width: 100%;
-    min-width: 150px; /* Set min width, to ensure that the images are not invisible due to shrinking */
-    min-height: 270px;
+.cardContainer .card .imageContainer img {
+    width: 80%; 
+    max-height: 400px;
     object-fit: cover; /* Ensures image fills container without distortion */
     border: hidden;
     border-radius: 1em;
     transition: 0.5s ease-out;
 }
-.cardContainer .card .cardContent .imageContainer img:hover {
+.cardContainer .card .imageContainer img:hover {
     transform: scale(1.05);
     box-shadow: 0 0 10px var(--tertiary-color);
 }
@@ -240,3 +260,47 @@
     }
 }
 
+.aboutContainer {
+  padding: 2rem;
+  color: var(--primary-color);
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 1rem;
+  margin-top: 4rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.aboutContainer h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.aboutContainer p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.impressumContainer {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  color: var(--primary-color);
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 1rem;
+  margin-top: 4rem;
+  line-height: 1.6;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.impressumContainer h1 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.impressumContainer p {
+  margin-bottom: 1rem;
+}

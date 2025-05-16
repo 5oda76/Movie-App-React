@@ -4,7 +4,6 @@ function Card(props) {
 
     const cardData = props.data;
 
-    /* */
     return (
         <div>
             <div className="card" key={props.i}>
