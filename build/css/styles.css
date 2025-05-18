@@ -37,7 +37,7 @@ body::before {
     background-image: url('../img/background.jpg'); /* adjust path as needed */
     background-size: cover;
     background-position: center;
-    filter: blur(10px);
+    filter: blur(3px);
     z-index: -1;
     transform: scale(1.05); /* Prevent edge clipping after blur */
 }
@@ -228,7 +228,7 @@ body::before {
     padding: 1em;
     font-weight: 600;
 }
-.sidebar .sidebarFooter .footerElement a {
+.sidebar .sidebarFooter .footerElement a{ /* Änderung aber sieht net gut aus */
     background-color: var(--secondary-bg-color);
     color: var(--primary-color);
     border: none;
@@ -240,7 +240,7 @@ body::before {
     transition: ease 0.5s;
     text-decoration: none;
 }
-.sidebar .sidebarFooter .footerElement a:hover {
+.sidebar .sidebarFooter .footerElement .buttonContainer:hover { /* Änderung aber sieht net gut aus */
     letter-spacing: 3px;
     font-weight: 600;
     background-color: var(--tertiary-color);

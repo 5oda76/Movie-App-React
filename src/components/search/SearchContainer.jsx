@@ -11,7 +11,12 @@ function SearchContainer(props) {
     });
 
     function handleSearchChange(event) {
-        setSearchBarValue(event.target.value);
+        if(event.key == "Enter"){
+            console.log("Enter pressed");
+            props.handleSearchButtonClick(searchBarValue, selectedValue);
+        }else{
+            setSearchBarValue(event.target.value);
+        }
     }
 
     function handleFilterChange(event) {
