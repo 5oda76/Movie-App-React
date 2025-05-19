@@ -196,7 +196,6 @@ body::before {
     color: var(--primary-color);
     text-align: center;
 }
-/* TODO: Add homebutton styling somewhere here. */
 .sidebar .sidebarFooter {
     position: absolute;
     bottom: 20px;
@@ -211,6 +210,7 @@ body::before {
     gap: 5px;
     border: 1px solid var(--primary-color);
     border-radius: 1em;
+    border: hidden;
 }
 .sidebar .sidebarHeader a {
     background-color: var(--secondary-bg-color);
@@ -221,14 +221,14 @@ body::before {
     font-size: var(--font-size);
     letter-spacing: 5px;
     text-decoration: none;
-    transition: 1s ease; 
+    transition: 0.5s ease; 
 }
 .sidebar .sidebarHeader a:hover {
     letter-spacing: 10px;
     padding: 1em;
     font-weight: 600;
 }
-.sidebar .sidebarFooter .footerElement a{ /* Änderung aber sieht net gut aus */
+.sidebar .sidebarFooter .footerElement a {
     background-color: var(--secondary-bg-color);
     color: var(--primary-color);
     border: none;
@@ -240,10 +240,11 @@ body::before {
     transition: ease 0.5s;
     text-decoration: none;
 }
-.sidebar .sidebarFooter .footerElement .buttonContainer:hover { /* Änderung aber sieht net gut aus */
+.sidebar .sidebarFooter .footerElement a:hover { 
     letter-spacing: 3px;
     font-weight: 600;
     background-color: var(--tertiary-color);
+    border: 1px solid var(--primary-color);
 }
 .sidebar .sidebarFooter ul {
     list-style: none;

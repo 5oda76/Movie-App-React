@@ -4,11 +4,9 @@ function AboutButton() {
     return (
         <div>
             <div className="aboutButton">
-                <Link to="/about">
                 <div className="buttonContainer">
-                    <i className="fa-solid fa-question"></i> <span>About</span>
+                    <i className="fa-solid fa-question"></i><Link to="/about"> About</Link> 
                 </div>
-                </Link> 
             </div>
         </div>
     );
