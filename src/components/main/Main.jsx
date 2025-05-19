@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import MainContent from "./MainContent";
 import SearchContainer from "../search/SearchContainer";
 import { getJsonData } from "../../api.js";
+import { getEmitHelpers } from "typescript";
 
 function Main() {
     const [search, setSearch] = useState({
@@ -37,15 +38,26 @@ function Main() {
                         const data = await getJsonData(search.filter, "array", search.value);
 
                         if(data) {
-                            setResults(data.Search);
+
+                            async function getObj(filter, elementTitle){
+                                const aobj = await getJsonData(filter, "char", elementTitle);
+                                console.log(aobj);
+                                return aobj;
+                            }
+
+                            const promises = data.Search.map((element) => getObj(element.filter,element.Title));
+                            const arr = await Promise.all(promises);
+                            console.log(arr);
+                            setResults(arr);
+
                         }
+
+                        
 
                     } catch(error) {
                         throw new Error("Error fetching data");
                     }
 
-                } else {
-                    console.log("Search value not valid.");
                 }
             }fetchData();
         },[search]);

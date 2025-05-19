@@ -11,9 +11,9 @@ function CardContainer(props) {
     console.log(data);
     /*  */
     return (
-        <div className="cardContainer">
+        <div className="cardContainer" key={props.i}>
             {
-                data.map((element, index) => (
+                data.map((element,index) => (
                     <Card data={element} i={index}/>
                 ))
             }

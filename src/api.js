@@ -25,7 +25,6 @@ async function getJsonData (type, jsonReturnType, query) {
 async function apiRequest(type, jsonReturnType, query) {
     try {
         let apiRequestLink = constructApiLink(type, jsonReturnType, query);
-        console.log(apiRequestLink);
         const data =  await fetchApiData(apiRequestLink);
         return data;
     } catch (error) {
@@ -61,7 +60,6 @@ function constructApiLink(type, jsonReturnType, query) {
     
     try {
         if(invalidTypes.includes(type)) {
-            console.log("Invalid type detected");
             API_LINK += "";
         }
     } catch(error) {
@@ -74,6 +72,7 @@ function constructApiLink(type, jsonReturnType, query) {
     }
 
     if(jsonReturnType === "string" || jsonReturnType === "char") {
+        API_LINK += "&plot=short";
         API_LINK += "&t=" + query;
     } 
     else if(jsonReturnType === "array") {
@@ -81,7 +80,7 @@ function constructApiLink(type, jsonReturnType, query) {
     } else {
         throw new Error("Invalid jsonReturnType");
     }
-    console.log(API_LINK);
+
     return API_LINK;
 }
 

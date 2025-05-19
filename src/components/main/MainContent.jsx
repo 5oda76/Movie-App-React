@@ -20,13 +20,11 @@ function MainContent(props) {
     /* This will render: At least 3 'cardContainer' in the set of a list */
     return (
         <div>
-            
             {
-                arrayPart.map((part) => (
-                    <CardContainer data={part} />
+                arrayPart.map((part, index) => (
+                    <CardContainer data={part} i={index}/>
                 ))
             }
-
         </div>
     );
 }

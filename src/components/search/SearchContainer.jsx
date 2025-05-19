@@ -12,7 +12,6 @@ function SearchContainer(props) {
 
     function handleSearchChange(event) {
         if(event.key == "Enter"){
-            console.log("Enter pressed");
             props.handleSearchButtonClick(searchBarValue, selectedValue);
         }else{
             setSearchBarValue(event.target.value);
